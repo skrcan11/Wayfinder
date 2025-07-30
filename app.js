@@ -31,11 +31,20 @@ async function getAIResponse(message) {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${apiKey}`
     },
-    body: JSON.stringify({
-      model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: message }],
-      temperature: 0.5
-    })
+body: JSON.stringify({
+  model: "gpt-3.5-turbo",
+  messages: [
+    {
+      role: "system",
+      content: "You are a helpful tech support assistant who helps users troubleshoot computer hardware and software issues. Be concise, step-by-step, and user-friendly."
+    },
+    {
+      role: "user",
+      content: message
+    }
+  ],
+  temperature: 0.5
+})
   });
 
   const data = await res.json();
