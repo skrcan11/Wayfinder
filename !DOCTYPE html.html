@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tech Assistant</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    #chat { max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; }
+    .message { margin: 10px 0; }
+    .user { font-weight: bold; }
+    .ai { color: darkblue; }
+  </style>
+</head>
+<body>
+  <h2>Tech Assistant Chat</h2>
+  <div id="chat"></div>
+  <input type="text" id="input" placeholder="Ask your question..." />
+  <button onclick="sendMessage()">Send</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
