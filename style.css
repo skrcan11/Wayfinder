@@ -1,3 +1,4 @@
+/* Global body style */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,11 +7,30 @@ body {
   color: #333;
 }
 
+/* Hero Section with Background Image */
 .hero {
-  background-color: #0a4d8c;
+  position: relative;
   color: white;
   text-align: center;
   padding: 60px 20px;
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
@@ -53,6 +73,7 @@ body {
   background-color: #e0e0e0;
 }
 
+/* Chat Section */
 #chat-section {
   max-width: 600px;
   margin: 40px auto;
@@ -77,33 +98,4 @@ input[type="text"] {
   padding: 10px;
   font-size: 16px;
   margin-right: 10px;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.message {
-  margin: 10px 0;
-}
-
-.user {
-  font-weight: bold;
-  background: #e1f5fe;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.ai {
-  color: darkblue;
-  background: #f1f1f1;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.typing {
-  font-style: italic;
-  color: gray;
 }
