@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Tech Assistant</title>
-  <link rel="stylesheet" href="style.css">
-</head>
 <body>
-  <h2>Tech Assistant Chat</h2>
-  <div id="chat"></div>
-  <input type="text" id="input" placeholder="Ask your question..." />
-  <button onclick="sendMessage()">Send</button>
+  <div class="hero">
+    <h1>Tl Wayfinder AI Hub</h1>
+    <p class="subheadline">Transforming Ministry Partner Engagement with AI-Driven Support</p>
+    <p class="tagline">Smarter Connections. Faster Solutions. Powered by Wayfinder AI.</p>
+    <p class="description">Chat with AI</p>
+    <p class="support-text">Get instant answers to your technology questions using our advanced AI assistant.</p>
+    <button onclick="scrollToChat()">Start Your AI Journey</button>
+  </div>
+
+  <div id="chat-section">
+    <h2>AI Assistant</h2>
+    <div id="chat"></div>
+    <input type="text" id="input" placeholder="Ask your question..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
 
   <script src="app.js"></script>
 </body>
-</html>
