@@ -44,3 +44,6 @@ async function getAIResponse(message) {
   const data = await res.json();
   return data.choices[0].message.content;
 }
+function scrollToChat() {
+  document.getElementById("chat-section").scrollIntoView({ behavior: "smooth" });
+}
