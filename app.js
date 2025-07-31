@@ -23,7 +23,7 @@ function appendMessage(sender, text, typing = false) {
 }
 
 async function getAIResponse(message) {
-  const apiKey = "YOUR_OPENAI_API_KEY_HERE";  // Replace with your actual API key
+  const apiKey = "YOUR_OPENAI_API_KEY_HERE"; // 🔴 Never expose this on frontend if deploying
 
   const res = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
@@ -31,20 +31,14 @@ async function getAIResponse(message) {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${apiKey}`
     },
-body: JSON.stringify({
-  model: "gpt-3.5-turbo",
-  messages: [
-    {
-      role: "system",
-      content: "You are a helpful tech support assistant who helps users troubleshoot computer hardware and software issues. Be concise, step-by-step, and user-friendly."
-    },
-    {
-      role: "user",
-      content: message
-    }
-  ],
-  temperature: 0.5
-})
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [
+        { role: "system", content: "You are a helpful tech support assistant." },
+        { role: "user", content: message }
+      ],
+      temperature: 0.5
+    })
   });
 
   const data = await res.json();
